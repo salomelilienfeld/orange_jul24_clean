@@ -19,22 +19,25 @@ from PIL import Image
 from pathlib import Path
 import gdown
 
-# ========================
-# 📥 Téléchargement Google Drive
-# ========================
-def telecharger_depuis_drive(file_id, local_path):
-    os.makedirs(Path(local_path).parent, exist_ok=True)
-    if not os.path.exists(local_path):
-        url = f"https://drive.google.com/uc?id={file_id}"
-        gdown.download(url, local_path, quiet=False)
+# # ========================
+# # 📥 Téléchargement Google Drive
+# # ========================
+# def telecharger_depuis_drive(file_id, local_path):
+#     os.makedirs(Path(local_path).parent, exist_ok=True)
+#     if not os.path.exists(local_path):
+#         url = f"https://drive.google.com/uc?id={file_id}"
+#         gdown.download(url, local_path, quiet=False)
 
-with st.spinner("📥 Chargement initial des fichiers (une seule fois) ..."):
-    telecharger_depuis_drive("13s7wsKJNuQp6nI_i4J3tufyX4qP_ZRYW", "data/accidents_graphiques_multi.csv")
-    telecharger_depuis_drive("1REgG5T14B3IgeD0Q6uAIu0oGlCY7RdMv", "data/accidents_graphiques.csv")
-    telecharger_depuis_drive("1cc8w4b1vhwHJGLGIc4bghVcrMdR1z48x", "models/streamlit_bin_randomforest_none_param_grid_rf.pkl")
-    telecharger_depuis_drive("1zPyVAmngnUdFVuT5-BNVU2dJ8cLLxkJU", "models/streamlit_randomforest_multi_none_param_grid_rf.pkl")
-    telecharger_depuis_drive("1znCeKIaroHNLY5F_qTwolPAzNcTXzU8n", "models/streamlit_randomforest_multi_oversampling_param_grid_rf.pkl")
-st.success("✅ Fichiers téléchargés avec succès")
+# with st.spinner("📥 Chargement initial des fichiers (une seule fois) ..."):
+#     telecharger_depuis_drive("13s7wsKJNuQp6nI_i4J3tufyX4qP_ZRYW", "data/accidents_graphiques_multi.csv")
+#     telecharger_depuis_drive("1REgG5T14B3IgeD0Q6uAIu0oGlCY7RdMv", "data/accidents_graphiques.csv")
+#     telecharger_depuis_drive("1cc8w4b1vhwHJGLGIc4bghVcrMdR1z48x", "models/streamlit_bin_randomforest_none_param_grid_rf.pkl")
+#     telecharger_depuis_drive("1zPyVAmngnUdFVuT5-BNVU2dJ8cLLxkJU", "models/streamlit_randomforest_multi_none_param_grid_rf.pkl")
+#     telecharger_depuis_drive("1znCeKIaroHNLY5F_qTwolPAzNcTXzU8n", "models/streamlit_randomforest_multi_oversampling_param_grid_rf.pkl")
+# st.success("✅ Fichiers téléchargés avec succès")
+
+
+
 # -------------------------------------------------
 # Configuration de la page Streamlit
 # -------------------------------------------------
@@ -1546,7 +1549,6 @@ def display_model_comparison():
 
     # ✅ Charge les 4 .pkl 'info'
     info_files = [
-        "../../models/streamlit_rf_info.pkl",
         "../../models/streamlit_bin_xgboost_none_param_grid_light_info.pkl",
         "../../models/streamlit_lr_info.pkl",
         "../../models/streamlit_catboost_info.pkl"
@@ -1615,10 +1617,6 @@ def display_model_comparison_multi():
         "../../models/streamlit_catboost_multi_smote_param_grid_catboost_light_info.pkl",
         "../../models/streamlit_catboost_multi_oversampling_param_grid_catboost_light_info.pkl",
         
-        "../../models/streamlit_randomforest_multi_none_param_grid_rf_info.pkl",
-        "../../models/streamlit_randomforest_multi_undersampling_param_grid_rf_info.pkl",
-        "../../models/streamlit_randomforest_multi_smote_param_grid_rf_info.pkl",
-        "../../models/streamlit_randomforest_multi_oversampling_param_grid_rf_info.pkl"  
     ]
 
     infos = []
