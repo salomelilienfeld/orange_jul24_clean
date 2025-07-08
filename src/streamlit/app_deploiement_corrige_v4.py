@@ -1181,7 +1181,7 @@ def display_prediction():
     st.subheader("🧠 Prédire la gravité d'un accident avec le modèle XGBoost Année 2023")
     st.markdown("Entrez les paramètres d'un accident pour prédire s'il est probable que la personne soit indemne ou blessée/tuée.")
 
-    model_path = "../../models/streamlit_bin_xgboost_none_param_grid_light.pkl"
+    model_path = "models/streamlit_bin_xgboost_none_param_grid_light.pkl"
     loaded_pickle_model = load_model(model_path)
 
     X, y, X_train, X_test, y_train, y_test = load_and_prepare_data("data/stream_value_df.csv")
@@ -1549,10 +1549,10 @@ def display_model_comparison():
 
     # ✅ Charge les 4 .pkl 'info'
     info_files = [
-        "../../models/streamlit_rf_info.pkl",
-        "../../models/streamlit_bin_xgboost_none_param_grid_light_info.pkl",
-        "../../models/streamlit_lr_info.pkl",
-        "../../models/streamlit_catboost_info.pkl"
+        "models/streamlit_rf_info.pkl",
+        "models/streamlit_bin_xgboost_none_param_grid_light_info.pkl",
+        "models/streamlit_lr_info.pkl",
+        "models/streamlit_catboost_info.pkl"
     ]
 
     infos = []
@@ -1608,20 +1608,20 @@ def display_model_comparison_multi():
 
     # ✅ Charge les 4 .pkl 'info'
     info_files = [
-        "../../models/streamlit_xgboost_multi_none_param_grid_light_info.pkl",
-        "../../models/streamlit_xgboost_multi_undersampling_param_grid_light_info.pkl",
-        "../../models/streamlit_xgboost_multi_smote_param_grid_light_info.pkl",
-        "../../models/streamlit_xgboost_multi_oversampling_param_grid_light_info.pkl",
+        "models/streamlit_xgboost_multi_none_param_grid_light_info.pkl",
+        "models/streamlit_xgboost_multi_undersampling_param_grid_light_info.pkl",
+        "models/streamlit_xgboost_multi_smote_param_grid_light_info.pkl",
+        "models/streamlit_xgboost_multi_oversampling_param_grid_light_info.pkl",
 
-        "../../models/streamlit_catboost_multi_none_param_grid_catboost_light_info.pkl",
-        "../../models/streamlit_catboost_multi_undersampling_param_grid_catboost_light_info.pkl",
-        "../../models/streamlit_catboost_multi_smote_param_grid_catboost_light_info.pkl",
-        "../../models/streamlit_catboost_multi_oversampling_param_grid_catboost_light_info.pkl",
+        "models/streamlit_catboost_multi_none_param_grid_catboost_light_info.pkl",
+        "models/streamlit_catboost_multi_undersampling_param_grid_catboost_light_info.pkl",
+        "models/streamlit_catboost_multi_smote_param_grid_catboost_light_info.pkl",
+        "models/streamlit_catboost_multi_oversampling_param_grid_catboost_light_info.pkl",
         
-        "../../models/streamlit_randomforest_multi_none_param_grid_rf_info.pkl",
-        "../../models/streamlit_randomforest_multi_undersampling_param_grid_rf_info.pkl",
-        "../../models/streamlit_randomforest_multi_smote_param_grid_rf_info.pkl",
-        "../../models/streamlit_randomforest_multi_oversampling_param_grid_rf_info.pkl"  
+        "models/streamlit_randomforest_multi_none_param_grid_rf_info.pkl",
+        "models/streamlit_randomforest_multi_undersampling_param_grid_rf_info.pkl",
+        "models/streamlit_randomforest_multi_smote_param_grid_rf_info.pkl",
+        "models/streamlit_randomforest_multi_oversampling_param_grid_rf_info.pkl"  
     ]
 
     infos = []
