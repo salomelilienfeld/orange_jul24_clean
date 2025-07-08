@@ -1359,7 +1359,7 @@ def display_prediction_multi():
     st.markdown("Entrez les paramètres d'un accident pour prédire s'il est probable que la personne soit indemne ou blessée/tuée.")
     # AMAJ
 
-    model_path = "../../models/streamlit_catboost_multi_smote_param_grid_catboost_light.pkl"
+    model_path = "models/streamlit_catboost_multi_smote_param_grid_catboost_light.pkl"
 
     loaded_pickle_model = load_model(model_path)
 
