@@ -1,0 +1,53 @@
+accident_type
+Motocycliste
+Pieton-Véhicule léger
+Motocycliste-Véhicule léger
+Véhicule léger
+EDP-Véhicule léger
+Cycliste-Véhicule léger
+Cycliste-Véhicule lourd
+Cycliste
+Pieton-Cycliste
+Véhicule léger-Véhicule lourd
+Pieton-Véhicule lourd
+Pieton
+Véhicule léger-Autres
+Motocycliste-Véhicule lourd
+Autres
+Cycliste-Motocycliste
+Pieton-Motocycliste
+Véhicule lourd
+EDP
+Cycliste-Autres
+Véhicule léger-Train
+Pieton-Train
+Pieton-Cycliste-Véhicule léger
+Motocycliste-Véhicule léger-Véhicule lourd
+EDP-Motocycliste
+Pieton-EDP
+EDP-Véhicule lourd
+Pieton-Motocycliste-Véhicule léger
+EDP-Cycliste
+Cycliste-Train
+Pieton-Autres
+EDP-Véhicule léger-Véhicule lourd
+Motocycliste-Autres
+Cycliste-Motocycliste-Véhicule léger
+Motocycliste-Véhicule léger-Autres
+Motocycliste-Train
+Pieton-EDP-Véhicule léger
+EDP-Autres
+Véhicule lourd-Autres
+Véhicule léger-Véhicule lourd-Autres
+Pieton-Véhicule léger-Véhicule lourd
+EDP-Motocycliste-Véhicule léger
+Motocycliste-Véhicule léger-Véhicule lourd-Autres
+Cycliste-Véhicule léger-Véhicule lourd
+Cycliste-Motocycliste-Véhicule lourd
+Pieton-Motocycliste-Véhicule léger-Véhicule lourd
+Train
+EDP-Train
+Pieton-Véhicule léger-Autres
+Pieton-Motocycliste-Véhicule lourd
+Véhicule lourd-Train
+EDP-Cycliste-Véhicule léger
