@@ -122,7 +122,7 @@ Voici le pipeline global de notre démarche projet, qui suit une architecture cl
 
 def CollecteDonnees():
     col1, col2 = st.columns([1, 2])  # [largeur image, largeur texte]
-    image_path = "data/CollecteDesDonnees.png"
+    image_path = "src/streamlit/data/CollecteDesDonnees.png"
     with col1:
         try:
             image = Image.open(image_path)
