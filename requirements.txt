@@ -8,3 +8,4 @@ plotly
 seaborn
 joblib
 gdown
+imblearn
