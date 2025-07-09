@@ -19,10 +19,8 @@ from PIL import Image
 from pathlib import Path
 import gdown
 import joblib
-import imblearn
 
 st.write(f"✅ scikit-learn version: {sklearn.__version__}")
-st.write(f"✅ imbalanced-learn version: {imblearn.__version__}")
 
 # # ========================
 # # 📥 Téléchargement Google Drive
