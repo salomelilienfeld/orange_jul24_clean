@@ -18,6 +18,7 @@ from graphviz import Digraph
 from PIL import Image
 from pathlib import Path
 import gdown
+import joblib
 
 # # ========================
 # # 📥 Téléchargement Google Drive
