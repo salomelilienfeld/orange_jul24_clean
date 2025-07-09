@@ -1181,7 +1181,7 @@ def display_prediction():
     st.subheader("🧠 Prédire la gravité d'un accident avec le modèle XGBoost Année 2023")
     st.markdown("Entrez les paramètres d'un accident pour prédire s'il est probable que la personne soit indemne ou blessée/tuée.")
 
-    model_path = "models/streamlit_bin_xgboost_none_param_grid_light.pkl"
+    model_path = "models/streamlit_bin_xgboost_none_param_grid_light.joblib"
     loaded_pickle_model = load_model(model_path)
 
     X, y, X_train, X_test, y_train, y_test = load_and_prepare_data("data/stream_value_df.csv")
