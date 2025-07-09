@@ -1,9 +1,10 @@
-catboost
-numpy
-pandas
-plotly
-scikit-learn
-seaborn
 streamlit
+scikit-learn
 xgboost
+catboost
+pandas
+numpy
+plotly
+seaborn
+joblib
 gdown
