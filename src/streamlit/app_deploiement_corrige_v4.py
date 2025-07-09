@@ -55,8 +55,7 @@ def load_csv(csv_path, sep=','):
 
 @st.cache_resource
 def load_model(model_path):
-    with open(model_path, 'rb') as f:
-        return pickle.load(f)
+    return joblib.load(model_path)
 
 def display_home():
     st.markdown("#### 🛣️ Contexte")
