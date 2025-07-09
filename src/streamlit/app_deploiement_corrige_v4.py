@@ -54,9 +54,18 @@ def load_csv(csv_path, sep=','):
     df = convert_mixed_types(df, mixed_columns)  
     return df
 
+# @st.cache_resource
+# def load_model(model_path):
+#     return joblib.load(model_path)
+
 @st.cache_resource
 def load_model(model_path):
-    return joblib.load(model_path)
+    import joblib
+    try:
+        return joblib.load(model_path)
+    except ModuleNotFoundError as e:
+        st.error(f"🧨 Module manquant pour charger le modèle : **{e.name}**")
+        raise
 
 def display_home():
     st.markdown("#### 🛣️ Contexte")
