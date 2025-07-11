@@ -20,7 +20,6 @@ from pathlib import Path
 import gdown
 import joblib
 
-st.write(f"✅ scikit-learn version: {sklearn.__version__}")
 
 # # ========================
 # # 📥 Téléchargement Google Drive
