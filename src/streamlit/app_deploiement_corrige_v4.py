@@ -55,9 +55,19 @@ def load_csv(csv_path, sep=','):
     df = convert_mixed_types(df, mixed_columns)  
     return df
 
+# @st.cache_resource
+# def load_model(model_path):
+#     with open(model_path, 'rb') as f:
+#         return pickle.load(f)
 @st.cache_resource
-def load_model(model_path):
-    with open(model_path, 'rb') as f:
+def load_model():
+    model_path = Path(__file__).resolve().parent / "models" / "streamlit_bin_xgboost_none_param_grid_light.pkl"
+
+    if not model_path.exists():
+        st.error(f"❌ Modèle introuvable : {model_path}")
+        raise FileNotFoundError(model_path)
+
+    with open(model_path, "rb") as f:
         return pickle.load(f)
     
 
