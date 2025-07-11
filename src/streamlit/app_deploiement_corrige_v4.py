@@ -56,18 +56,12 @@ def load_csv(csv_path, sep=','):
     df = convert_mixed_types(df, mixed_columns)  
     return df
 
-# @st.cache_resource
-# def load_model(model_path):
-#     return joblib.load(model_path)
-
 @st.cache_resource
 def load_model(model_path):
-    import joblib
-    try:
-        return joblib.load(model_path)
-    except ModuleNotFoundError as e:
-        st.error(f"🧨 Module manquant pour charger le modèle : **{e.name}**")
-        raise
+    with open(model_path, 'rb') as f:
+        return pickle.load(f)
+    
+
 
 def display_home():
     st.markdown("#### 🛣️ Contexte")
@@ -1192,7 +1186,7 @@ def display_prediction():
     st.subheader("🧠 Prédire la gravité d'un accident avec le modèle XGBoost Année 2023")
     st.markdown("Entrez les paramètres d'un accident pour prédire s'il est probable que la personne soit indemne ou blessée/tuée.")
 
-    model_path = "models/streamlit_bin_xgboost_none_param_grid_light.joblib"
+    model_path = "models/streamlit_bin_xgboost_none_param_grid_light.pkl"
     loaded_pickle_model = load_model(model_path)
 
     X, y, X_train, X_test, y_train, y_test = load_and_prepare_data("data/stream_value_df.csv")
