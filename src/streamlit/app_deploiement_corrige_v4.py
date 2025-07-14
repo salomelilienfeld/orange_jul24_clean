@@ -60,25 +60,43 @@ def load_csv(csv_path, sep=','):
 #     with open(model_path, 'rb') as f:
 #         return pickle.load(f)
 
-@st.cache_resource
-def load_model(model_path: str):
-    # On se base sur le chemin de CE fichier
-    base_dir = os.path.dirname(__file__)  # src/streamlit/
+# @st.cache_resource
+# def load_model(model_path: str):
+#     # On se base sur le chemin de CE fichier
+#     base_dir = os.path.dirname(__file__)  # src/streamlit/
 
-    # Si le chemin est déjà absolu, on ne touche à rien
-    if not os.path.isabs(model_path):
-        full_path = os.path.join(base_dir, "model", model_path)
-    else:
-        full_path = model_path
+#     # Si le chemin est déjà absolu, on ne touche à rien
+#     if not os.path.isabs(model_path):
+#         full_path = os.path.join(base_dir, "model", model_path)
+#     else:
+#         full_path = model_path
+
+#     if not os.path.exists(full_path):
+#         st.error(f"❌ Modèle non trouvé : {full_path}")
+#         st.stop()
+
+#     with open(full_path, 'rb') as f:
+#         return pickle.load(f)
+#     st.write(f"📦 Chargement du modèle : {full_path}")
+
+@st.cache_resource
+def load_model(model_filename: str):
+    import os
+    import pickle
+
+    dir_path = os.path.dirname(__file__)
+    st.write(f"📁 __file__ = {__file__}")
+    st.write(f"📁 dir_path = {dir_path}")
+    
+    full_path = os.path.join(dir_path, "model", model_filename)
+    st.write(f"📦 Chemin final = {full_path}")
 
     if not os.path.exists(full_path):
         st.error(f"❌ Modèle non trouvé : {full_path}")
         st.stop()
 
-    with open(full_path, 'rb') as f:
+    with open(full_path, "rb") as f:
         return pickle.load(f)
-    st.write(f"📦 Chargement du modèle : {full_path}")
-
     
 
 
