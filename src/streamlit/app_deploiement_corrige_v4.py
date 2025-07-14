@@ -1681,20 +1681,20 @@ def display_model_comparison_multi():
 
     # ✅ Charge les 4 .pkl 'info'
     info_files = [
-        "models/streamlit_xgboost_multi_none_param_grid_light_info.pkl",
-        "models/streamlit_xgboost_multi_undersampling_param_grid_light_info.pkl",
-        "models/streamlit_xgboost_multi_smote_param_grid_light_info.pkl",
-        "models/streamlit_xgboost_multi_oversampling_param_grid_light_info.pkl",
+        "src/streamlit/models/streamlit_xgboost_multi_none_param_grid_light_info.pkl",
+        "src/streamlit/models/streamlit_xgboost_multi_undersampling_param_grid_light_info.pkl",
+        "src/streamlit/models/streamlit_xgboost_multi_smote_param_grid_light_info.pkl",
+        "src/streamlit/models/streamlit_xgboost_multi_oversampling_param_grid_light_info.pkl",
 
-        "models/streamlit_catboost_multi_none_param_grid_catboost_light_info.pkl",
-        "models/streamlit_catboost_multi_undersampling_param_grid_catboost_light_info.pkl",
-        "models/streamlit_catboost_multi_smote_param_grid_catboost_light_info.pkl",
-        "models/streamlit_catboost_multi_oversampling_param_grid_catboost_light_info.pkl",
+        "src/streamlit/models/streamlit_catboost_multi_none_param_grid_catboost_light_info.pkl",
+        "src/streamlit/models/streamlit_catboost_multi_undersampling_param_grid_catboost_light_info.pkl",
+        "src/streamlit/models/streamlit_catboost_multi_smote_param_grid_catboost_light_info.pkl",
+        "src/streamlit/models/streamlit_catboost_multi_oversampling_param_grid_catboost_light_info.pkl",
         
-        "models/streamlit_randomforest_multi_none_param_grid_rf_info.pkl",
-        "models/streamlit_randomforest_multi_undersampling_param_grid_rf_info.pkl",
-        "models/streamlit_randomforest_multi_smote_param_grid_rf_info.pkl",
-        "models/streamlit_randomforest_multi_oversampling_param_grid_rf_info.pkl"  
+        "src/streamlit/models/streamlit_randomforest_multi_none_param_grid_rf_info.pkl",
+        "src/streamlit/models/streamlit_randomforest_multi_undersampling_param_grid_rf_info.pkl",
+        "src/streamlit/models/streamlit_randomforest_multi_smote_param_grid_rf_info.pkl",
+        "src/streamlit/models/streamlit_randomforest_multi_oversampling_param_grid_rf_info.pkl"  
     ]
 
     infos = []
