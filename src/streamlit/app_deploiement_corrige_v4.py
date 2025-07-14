@@ -1622,10 +1622,10 @@ def display_model_comparison():
 
     # ✅ Charge les 4 .pkl 'info'
     info_files = [
-        "models/streamlit_rf_info.pkl",
-        "models/streamlit_bin_xgboost_none_param_grid_light_info.pkl",
-        "models/streamlit_lr_info.pkl",
-        "models/streamlit_catboost_info.pkl"
+        "src/streamlit/models/streamlit_rf_info.pkl",
+        "src/streamlit/models/streamlit_bin_xgboost_none_param_grid_light_info.pkl",
+        "src/streamlit/models/streamlit_lr_info.pkl",
+        "src/streamlit/models/streamlit_catboost_info.pkl"
     ]
 
     infos = []
