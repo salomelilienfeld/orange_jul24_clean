@@ -1269,7 +1269,7 @@ def display_prediction():
     col_content = {}
 
     for col in columns:
-        filename = f"data/{col}_possibles.csv"
+        filename = f"src/streamlit/data/{col}_possibles.csv"
         df = pd.read_csv(filename)
         col_content[col] = df[col].dropna().tolist()
 
