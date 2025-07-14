@@ -1196,7 +1196,7 @@ def display_prediction():
     st.markdown("Entrez les paramètres d'un accident pour prédire s'il est probable que la personne soit indemne ou blessée/tuée.")
 
     model_path = "models/streamlit_bin_xgboost_none_param_grid_light.pkl"
-    loaded_pickle_model = load_model(model_path)
+    loaded_pickle_model = load_model()
 
     X, y, X_train, X_test, y_train, y_test = load_and_prepare_data("data/stream_value_df.csv")
 
@@ -1375,7 +1375,7 @@ def display_prediction_multi():
 
     model_path = "models/streamlit_catboost_multi_smote_param_grid_catboost_light.pkl"
 
-    loaded_pickle_model = load_model(model_path)
+    loaded_pickle_model = load_model()
 
     X, y, X_train, X_test, y_train, y_test = load_and_prepare_data("data/stream_value_df.csv")
 
