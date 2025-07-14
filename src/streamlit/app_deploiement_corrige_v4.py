@@ -98,24 +98,37 @@ def load_csv(csv_path, sep=','):
 #     with open(full_path, "rb") as f:
 #         return pickle.load(f)
 
-import os
-import pickle
-import streamlit as st
+# import os
+# import pickle
+# import streamlit as st
+
+# @st.cache_resource
+# def load_model(model_filename: str):
+#     dir_path = os.path.dirname(os.path.abspath(__file__))  # ⬅️ on force le chemin absolu ici
+
+#     full_path = os.path.join(dir_path, "models", model_filename)
+    
+#     st.write(f"✅ Chemin absolu construit : {full_path}")
+    
+#     if not os.path.exists(full_path):
+#         st.error(f"❌ Modèle non trouvé : {full_path}")
+#         st.stop()
+
+#     with open(full_path, "rb") as f:
+#         return pickle.load(f)
 
 @st.cache_resource
-def load_model(model_filename: str):
-    dir_path = os.path.dirname(os.path.abspath(__file__))  # ⬅️ on force le chemin absolu ici
+def load_model(filename):
+    dir_path = os.path.dirname(os.path.abspath(__file__))
+    full_path = os.path.join(dir_path, "models", filename)
 
-    full_path = os.path.join(dir_path, "models", model_filename)
-    
-    st.write(f"✅ Chemin absolu construit : {full_path}")
-    
     if not os.path.exists(full_path):
         st.error(f"❌ Modèle non trouvé : {full_path}")
         st.stop()
 
-    with open(full_path, "rb") as f:
-        return pickle.load(f)
+    return joblib.load(full_path)
+
+model = load_model("xgb_model_clean.joblib")
 
     
 
