@@ -59,16 +59,23 @@ def load_csv(csv_path, sep=','):
 # def load_model(model_path):
 #     with open(model_path, 'rb') as f:
 #         return pickle.load(f)
+
 @st.cache_resource
-def load_model():
-    dir_path = os.path.dirname(__file__)  # src/streamlit/
-    model_path = os.path.join(dir_path, "model", "streamlit_bin_xgboost_none_param_grid_light.pkl")
-    
-    if not os.path.exists(model_path):
-        st.error(f"⚠️ Modèle introuvable à ce chemin : {model_path}")
+def load_model(model_path: str):
+    # On se base sur le chemin de CE fichier
+    base_dir = os.path.dirname(__file__)  # src/streamlit/
+
+    # Si le chemin est déjà absolu, on ne touche à rien
+    if not os.path.isabs(model_path):
+        full_path = os.path.join(base_dir, "model", model_path)
+    else:
+        full_path = model_path
+
+    if not os.path.exists(full_path):
+        st.error(f"❌ Modèle non trouvé : {full_path}")
         st.stop()
 
-    with open(model_path, "rb") as f:
+    with open(full_path, 'rb') as f:
         return pickle.load(f)
     
 
@@ -1197,7 +1204,7 @@ def display_prediction():
     st.markdown("Entrez les paramètres d'un accident pour prédire s'il est probable que la personne soit indemne ou blessée/tuée.")
 
     model_path = "models/streamlit_bin_xgboost_none_param_grid_light.pkl"
-    loaded_pickle_model = load_model()
+    loaded_pickle_model = load_model("streamlit_bin_xgboost_none_param_grid_light.pkl")
 
     X, y, X_train, X_test, y_train, y_test = load_and_prepare_data("data/stream_value_df.csv")
 
@@ -1376,7 +1383,7 @@ def display_prediction_multi():
 
     model_path = "models/streamlit_catboost_multi_smote_param_grid_catboost_light.pkl"
 
-    loaded_pickle_model = load_model()
+    loaded_pickle_model = load_model("streamlit_catboost_multi_smote_param_grid_catboost_light.pkl")
 
     X, y, X_train, X_test, y_train, y_test = load_and_prepare_data("data/stream_value_df.csv")
 
