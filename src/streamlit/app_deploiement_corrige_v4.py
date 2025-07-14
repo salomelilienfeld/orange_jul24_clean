@@ -1257,7 +1257,7 @@ def display_prediction():
     model_path = "models/streamlit_bin_xgboost_none_param_grid_light.pkl"
     loaded_pickle_model = load_model("xgb_model_clean.joblib")
 
-    X, y, X_train, X_test, y_train, y_test = load_and_prepare_data("data/stream_value_df.csv")
+    X, y, X_train, X_test, y_train, y_test = load_and_prepare_data("src/streamlit/data/stream_value_df.csv")
 
     # Initialiser le OneHotEncoder avec handle_unknown='ignore' pour gérer les modalités inconnues dans le test
     encoder = OneHotEncoder(sparse_output=False, handle_unknown='ignore', drop=None)  # drop='first' pour éviter la multicolinéarité, mais dans les modèles Arbres ou Forets, ça peut être mis à None
