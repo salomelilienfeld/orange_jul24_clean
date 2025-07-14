@@ -77,6 +77,8 @@ def load_model(model_path: str):
 
     with open(full_path, 'rb') as f:
         return pickle.load(f)
+    st.write(f"📦 Chargement du modèle : {full_path}")
+
     
 
 
