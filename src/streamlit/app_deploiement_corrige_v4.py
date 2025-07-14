@@ -1436,7 +1436,7 @@ def display_prediction_multi():
 
     loaded_pickle_model = load_model("streamlit_catboost_multi_smote_param_grid_catboost_light.pkl")
 
-    X, y, X_train, X_test, y_train, y_test = load_and_prepare_data("data/stream_value_df.csv")
+    X, y, X_train, X_test, y_train, y_test = load_and_prepare_data("src/streamlit/data/stream_value_df.csv")
 
 # -------------------------------------------------
 # Encodage
