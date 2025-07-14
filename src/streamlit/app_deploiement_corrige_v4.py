@@ -106,7 +106,7 @@ import streamlit as st
 def load_model(model_filename: str):
     dir_path = os.path.dirname(os.path.abspath(__file__))  # ⬅️ on force le chemin absolu ici
 
-    full_path = os.path.join(dir_path, "model", model_filename)
+    full_path = os.path.join(dir_path, "models", model_filename)
     
     st.write(f"✅ Chemin absolu construit : {full_path}")
     
