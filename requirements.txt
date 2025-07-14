@@ -7,6 +7,5 @@ numpy
 plotly
 streamlit
 gdown
-scikit-learn==1.2.2
-imbalanced-learn==0.10.1
-pathlib
+scikit-learn
+imbalanced-learn
