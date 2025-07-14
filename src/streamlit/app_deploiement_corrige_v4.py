@@ -55,20 +55,20 @@ def load_csv(csv_path, sep=','):
     df = convert_mixed_types(df, mixed_columns)  
     return df
 
-# @st.cache_resource
-# def load_model(model_path):
-#     with open(model_path, 'rb') as f:
-#         return pickle.load(f)
 @st.cache_resource
-def load_model():
-    model_path = Path(__file__).resolve().parent / "models" / "streamlit_bin_xgboost_none_param_grid_light.pkl"
-
-    if not model_path.exists():
-        st.error(f"❌ Modèle introuvable : {model_path}")
-        raise FileNotFoundError(model_path)
-
-    with open(model_path, "rb") as f:
+def load_model(model_path):
+    with open(model_path, 'rb') as f:
         return pickle.load(f)
+# @st.cache_resource
+# def load_model():
+#     model_path = Path(__file__).resolve().parent / "models" / "streamlit_bin_xgboost_none_param_grid_light.pkl"
+
+#     if not model_path.exists():
+#         st.error(f"❌ Modèle introuvable : {model_path}")
+#         raise FileNotFoundError(model_path)
+
+#     with open(model_path, "rb") as f:
+#         return pickle.load(f)
     
 
 
@@ -1196,7 +1196,7 @@ def display_prediction():
     st.markdown("Entrez les paramètres d'un accident pour prédire s'il est probable que la personne soit indemne ou blessée/tuée.")
 
     model_path = "models/streamlit_bin_xgboost_none_param_grid_light.pkl"
-    loaded_pickle_model = load_model()
+    loaded_pickle_model = load_model(model_path)
 
     X, y, X_train, X_test, y_train, y_test = load_and_prepare_data("data/stream_value_df.csv")
 
@@ -1375,7 +1375,7 @@ def display_prediction_multi():
 
     model_path = "models/streamlit_catboost_multi_smote_param_grid_catboost_light.pkl"
 
-    loaded_pickle_model = load_model()
+    loaded_pickle_model = load_model(model_path)
 
     X, y, X_train, X_test, y_train, y_test = load_and_prepare_data("data/stream_value_df.csv")
 
