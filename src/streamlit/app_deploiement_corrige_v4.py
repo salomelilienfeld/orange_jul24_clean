@@ -79,24 +79,44 @@ def load_csv(csv_path, sep=','):
 #         return pickle.load(f)
 #     st.write(f"📦 Chargement du modèle : {full_path}")
 
+# @st.cache_resource
+# def load_model(model_filename: str):
+#     import os
+#     import pickle
+
+#     dir_path = os.path.dirname(__file__)
+#     st.write(f"📁 __file__ = {__file__}")
+#     st.write(f"📁 dir_path = {dir_path}")
+    
+#     full_path = os.path.join(dir_path, "model", model_filename)
+#     st.write(f"📦 Chemin final = {full_path}")
+
+#     if not os.path.exists(full_path):
+#         st.error(f"❌ Modèle non trouvé : {full_path}")
+#         st.stop()
+
+#     with open(full_path, "rb") as f:
+#         return pickle.load(f)
+
+import os
+import pickle
+import streamlit as st
+
 @st.cache_resource
 def load_model(model_filename: str):
-    import os
-    import pickle
+    dir_path = os.path.dirname(os.path.abspath(__file__))  # ⬅️ on force le chemin absolu ici
 
-    dir_path = os.path.dirname(__file__)
-    st.write(f"📁 __file__ = {__file__}")
-    st.write(f"📁 dir_path = {dir_path}")
-    
     full_path = os.path.join(dir_path, "model", model_filename)
-    st.write(f"📦 Chemin final = {full_path}")
-
+    
+    st.write(f"✅ Chemin absolu construit : {full_path}")
+    
     if not os.path.exists(full_path):
         st.error(f"❌ Modèle non trouvé : {full_path}")
         st.stop()
 
     with open(full_path, "rb") as f:
         return pickle.load(f)
+
     
 
 
