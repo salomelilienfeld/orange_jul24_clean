@@ -1950,7 +1950,7 @@ def main():
 
     elif menu == "🏁 Conclusion":
 
-        image_path = "data/importance.png"
+        image_path = "src/streamlit/data/importance.png"
 
 
         st.title("🏁 Conclusion")
