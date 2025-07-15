@@ -1434,7 +1434,7 @@ def display_prediction_multi():
 
     model_path = "models/streamlit_catboost_multi_smote_param_grid_catboost_light.pkl"
 
-    loaded_pickle_model = load_model("streamlit_catboost_multi_smote_param_grid_catboost_light.pkl")
+    loaded_pickle_model = load_model("catboost_multi_smote_light_clean.joblib")
 
     X, y, X_train, X_test, y_train, y_test = load_and_prepare_data("src/streamlit/data/stream_value_df.csv")
 
